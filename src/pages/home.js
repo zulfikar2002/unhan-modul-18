@@ -51,7 +51,7 @@ const Home = () => {
 
         const verify = async() =>{
             try {
-              const response = await axios.post('http://localhost:3000/verify', {
+              const response = await axios.post('https://backend-production-46f5.up.railway.app/verify', {
                 token: localStorage.getItem('token')
               })
               if(response.status == 200){

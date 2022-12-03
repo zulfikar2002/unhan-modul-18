@@ -47,7 +47,7 @@ const Profile = () => {
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verifikasi = async()=> {
           try {
-            const response = await axios.post('http://localhost:3000/verify', {token : localStorage.getItem('token')})
+            const response = await axios.post('https://backend-production-46f5.up.railway.app/verify', {token : localStorage.getItem('token')})
             console.log(localStorage.getItem('token'))
             if (response.status == 200){
               setIsLogin(true)
@@ -80,7 +80,7 @@ const Profile = () => {
 
         // 2. Hit endpoint logout dengan body jwt yang didapat dari localstorage
         //   dan setelah berhasil, beri alert sukses
-        await axios.post('http://localhost:3000/logout', {
+        await axios.post('https://backend-production-46f5.up.railway.app/logout', {
             jwt: localStorage.getItem('token')
         })
         .then((_res) => {
